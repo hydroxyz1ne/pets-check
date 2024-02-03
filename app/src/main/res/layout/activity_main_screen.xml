@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen">
+
+    <LinearLayout
+        android:id="@+id/topNav"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="95dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/main_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мои питомцы"
+            android:textColor="@color/black"
+            android:fontFamily="@font/semibold"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/addPet"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal"
+            android:src="@drawable/plusbtn"
+            android:layout_marginStart="100dp"/>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topNav" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/roksikCard"
+                android:layout_width="200dp"
+                android:layout_height="260dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="260dp"
+                        android:src="@drawable/roksyan"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Роксик"
+                        android:paddingHorizontal="16dp"
+                        android:fontFamily="@font/medium"
+                        android:textColor="@color/white"
+                        android:letterSpacing="-0.05"
+                        android:textSize="20sp"
+                        android:layout_marginTop="200dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Последний раз какал: cегодня"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/reg"
+                        android:paddingHorizontal="16dp"
+                        android:letterSpacing="-0.05"
+                        android:textSize="12sp"
+                        android:layout_marginTop="230dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pechenkaCard"
+                android:layout_width="200dp"
+                android:layout_height="260dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="260dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/pechenka"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Печенька"
+                    android:paddingHorizontal="16dp"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/white"
+                    android:letterSpacing="-0.05"
+                    android:textSize="20sp"
+                    android:layout_marginTop="200dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/subhead2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Последний раз какал: cегодня"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/reg"
+                    android:paddingHorizontal="16dp"
+                    android:letterSpacing="-0.05"
+                    android:textSize="12sp"
+                    android:layout_marginTop="230dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+    
+    
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
