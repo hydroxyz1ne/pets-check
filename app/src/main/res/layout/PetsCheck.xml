@@ -1,0 +1,456 @@
+<figma file="PetsCheck">
+<Page name="Page 1" imageid="0:1">
+  <Frame name="iPhone 13 &amp; 14 - 1" imageid="3:3">
+  <Frame name="Frame 1" imageid="3:19">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="3:18" transform="1,0,-877,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 5" imageid="3:38">
+  <Frame name="Frame 4" imageid="3:37">
+  <Frame name="Frame 2" imageid="3:27">
+    <TextNode>
+      <base>PetsCheck</base>
+      <string page="Page 1" frame="Frame 2" nodeid="3:26" transform="1,0,-837,0,1,81">PetsCheck</string>
+    </TextNode>
+  </Frame>
+    <TextNode>
+      <base>Cледите за здоровьем своего пушистого друга</base>
+      <string page="Page 1" frame="" nodeid="3:28" transform="1,0,-877,0,1,126"><color val="type:SOLID:visible:true:opacity:1:blendMode:NORMAL:color:r:0.15833333134651184:g:0.15833333134651184:b:0.15833333134651184:boundVariables:"/>Cледите за <color val="type:SOLID:visible:true:opacity:1:blendMode:NORMAL:color:r:1:g:0.6000000238418579:b:0:boundVariables:"/>здоровьем<color val="type:SOLID:visible:true:opacity:1:blendMode:NORMAL:color:r:0.15833333134651184:g:0.15833333134651184:b:0.15833333134651184:boundVariables:"/> своего пушистого друга</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 3" imageid="3:34">
+    <TextNode>
+      <base>Начать</base>
+      <string page="Page 1" frame="Frame 3" nodeid="3:29" transform="1,0,-752,0,1,291">Начать</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 7" imageid="71:2">
+  <Frame name="Frame 1" imageid="71:4">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="71:5" transform="1,0,1703,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+    <TextNode>
+      <base>Мои питомцы</base>
+      <string page="Page 1" frame="" nodeid="92:2" transform="1,0,1703,0,1,-403">Мои питомцы</string>
+    </TextNode>
+    <TextNode>
+      <base>Роксян</base>
+      <string page="Page 1" frame="" nodeid="92:15" transform="1,0,1719,0,1,-138">Роксян</string>
+    </TextNode>
+    <TextNode>
+      <base>Последний раз какал: cегодня</base>
+      <string page="Page 1" frame="" nodeid="92:17" transform="1,0,1719,0,1,-112">Последний раз какал: cегодня</string>
+    </TextNode>
+    <TextNode>
+      <base>Печенька</base>
+      <string page="Page 1" frame="" nodeid="92:16" transform="1,0,1927,0,1,-138">Печенька</string>
+    </TextNode>
+    <TextNode>
+      <base>Последний раз какал: cегодня</base>
+      <string page="Page 1" frame="" nodeid="92:18" transform="1,0,1929,0,1,-113">Последний раз какал: cегодня</string>
+    </TextNode>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 10" imageid="126:2">
+  <Frame name="Frame 34" imageid="127:58">
+    <TextNode>
+      <base>Роксян</base>
+      <string page="Page 1" frame="Frame 34" nodeid="126:15" transform="1,0,3009,0,1,-233">Роксян</string>
+    </TextNode>
+  <Frame name="Frame 37" imageid="137:78">
+  <Frame name="Frame 36" imageid="127:63">
+    <TextNode>
+      <base>Короткая сводка</base>
+      <string page="Page 1" frame="Frame 36" nodeid="126:45" transform="1,0,3009,0,1,-133">Короткая сводка</string>
+    </TextNode>
+  <Frame name="Frame 35" imageid="127:62">
+    <TextNode>
+      <base>подробнее</base>
+      <string page="Page 1" frame="Frame 35" nodeid="127:59" transform="1,0,3241,0,1,-131">подробнее</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 30" imageid="126:44">
+  <Frame name="Frame 28" imageid="126:37">
+    <TextNode>
+      <base>16.01.2024</base>
+      <string page="Page 1" frame="Frame 28" nodeid="126:36" transform="1,0,3037.5,0,1,-89">16.01.2024</string>
+    </TextNode>
+    <TextNode>
+      <base>4.2 кг</base>
+      <string page="Page 1" frame="Frame 28" nodeid="126:34" transform="1,0,3034,0,1,-71">4.2 кг</string>
+    </TextNode>
+    <TextNode>
+      <base>вес</base>
+      <string page="Page 1" frame="Frame 28" nodeid="126:35" transform="1,0,3052.5,0,1,-41">вес</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 29" imageid="126:38">
+    <TextNode>
+      <base>16.03.2024</base>
+      <string page="Page 1" frame="Frame 29" nodeid="126:39" transform="1,0,3205,0,1,-89">16.03.2024</string>
+    </TextNode>
+    <TextNode>
+      <base>Через 41 день </base>
+      <string page="Page 1" frame="Frame 29" nodeid="126:40" transform="1,0,3156,0,1,-71">Через 41 день </string>
+    </TextNode>
+    <TextNode>
+      <base>к ветеринару</base>
+      <string page="Page 1" frame="Frame 29" nodeid="126:41" transform="1,0,3186,0,1,-41">к ветеринару</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 33" imageid="127:54">
+  <Frame name="Frame 32" imageid="127:53">
+  <Frame name="Frame 31" imageid="127:52">
+    <TextNode>
+      <base>Информация о питомце</base>
+      <string page="Page 1" frame="Frame 31" nodeid="126:47" transform="1,0,3141,0,1,65">Информация о питомце</string>
+    </TextNode>
+    <TextNode>
+      <base>Без породы(домашняя кошка)</base>
+      <string page="Page 1" frame="Frame 31" nodeid="127:49" transform="1,0,3141,0,1,89">Без породы(домашняя кошка)</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 28" imageid="127:50">
+    <TextNode>
+      <base>Открыть</base>
+      <string page="Page 1" frame="Frame 28" nodeid="127:51" transform="1,0,3204.5,0,1,132">Открыть</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 32" imageid="127:68">
+  <Frame name="Frame 31" imageid="127:69">
+    <TextNode>
+      <base>Туалет</base>
+      <string page="Page 1" frame="Frame 31" nodeid="127:70" transform="1,0,3009,0,1,255">Туалет</string>
+    </TextNode>
+    <TextNode>
+      <base>Последний раз: cегодня</base>
+      <string page="Page 1" frame="Frame 31" nodeid="127:71" transform="1,0,3009,0,1,279">Последний раз: cегодня</string>
+    </TextNode>
+  <Frame name="Frame 36" imageid="127:74">
+    <TextNode>
+      <base>подробнее</base>
+      <string page="Page 1" frame="Frame 36" nodeid="127:75" transform="1,0,3009,0,1,299">подробнее</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 2" imageid="3:39">
+  <Frame name="Frame 1" imageid="3:41">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="3:42" transform="1,0,-447,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 14" imageid="3:134">
+    <TextNode>
+      <base>Добавить питомца</base>
+      <string page="Page 1" frame="Frame 14" nodeid="3:63" transform="1,0,-447,0,1,-379">Добавить питомца</string>
+    </TextNode>
+  <Frame name="Frame 8" imageid="3:78">
+  <Frame name="Frame 6" imageid="3:76">
+    <TextNode>
+      <base>Кошка</base>
+      <string page="Page 1" frame="" nodeid="3:64" transform="1,0,-281.5,0,1,-293">Кошка</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 7" imageid="3:77">
+    <TextNode>
+      <base>Собака</base>
+      <string page="Page 1" frame="" nodeid="3:65" transform="1,0,-284.5,0,1,-213">Собака</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 5" imageid="3:79">
+    <TextNode>
+      <base>Дальше</base>
+      <string page="Page 1" frame="Frame 5" nodeid="3:80" transform="1,0,-324.5,0,1,292">Дальше</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="btn-cat" imageid="78:3">
+    <TextNode>
+      <base>Кошка</base>
+      <string page="Page 1" frame="" nodeid="78:9" transform="1,0,-390.5,0,1,456">Кошка</string>
+    </TextNode>
+  </Frame>
+  <Frame name="btn-dog" imageid="78:10">
+    <TextNode>
+      <base>Собака</base>
+      <string page="Page 1" frame="" nodeid="78:15" transform="1,0,-403.5,0,1,558">Собака</string>
+    </TextNode>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 3" imageid="3:83">
+  <Frame name="Frame 1" imageid="3:84">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="3:85" transform="1,0,-17,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 5" imageid="3:111">
+    <TextNode>
+      <base>Дальше</base>
+      <string page="Page 1" frame="Frame 5" nodeid="3:112" transform="1,0,105.5,0,1,292">Дальше</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 13" imageid="3:133">
+    <TextNode>
+      <base>Укажите возраст кошки</base>
+      <string page="Page 1" frame="Frame 13" nodeid="3:96" transform="1,0,-17,0,1,-379">Укажите возраст кошки</string>
+    </TextNode>
+  <Frame name="Frame 12" imageid="3:132">
+  <Frame name="Frame 8" imageid="3:119">
+    <TextNode>
+      <base>0-12 месяцев</base>
+      <string page="Page 1" frame="Frame 8" nodeid="3:125" transform="1,0,89,0,1,-267">0-12 месяцев</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 9" imageid="3:126">
+    <TextNode>
+      <base>1-6 лет</base>
+      <string page="Page 1" frame="Frame 9" nodeid="3:127" transform="1,0,121,0,1,-199">1-6 лет</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 10" imageid="3:128">
+    <TextNode>
+      <base>7-10  лет</base>
+      <string page="Page 1" frame="Frame 10" nodeid="3:129" transform="1,0,112.5,0,1,-131">7-10  лет</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 11" imageid="3:130">
+    <TextNode>
+      <base>10&lt;  лет</base>
+      <string page="Page 1" frame="Frame 11" nodeid="3:131" transform="1,0,116,0,1,-63">10&lt;  лет</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 4" imageid="3:135">
+  <Frame name="Frame 1" imageid="3:136">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="3:137" transform="1,0,413,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 13" imageid="3:152">
+    <TextNode>
+      <base>Какого общее состояние питомца</base>
+      <string page="Page 1" frame="Frame 13" nodeid="3:153" transform="1,0,405,0,1,-409">Какого общее состояние питомца</string>
+    </TextNode>
+  <Frame name="Frame 12" imageid="3:154">
+  <Frame name="Frame 8" imageid="3:155">
+  <Frame name="Frame 15" imageid="3:164">
+    <TextNode>
+      <base>Все отлично</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:156" transform="1,0,430,0,1,-297">Все отлично</string>
+    </TextNode>
+    <TextNode>
+      <base>Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:163" transform="1,0,430,0,1,-261">Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 12" imageid="3:165">
+  <Frame name="Frame 15" imageid="3:166">
+    <TextNode>
+      <base>Умеренно</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:167" transform="1,0,430,0,1,-137">Умеренно</string>
+    </TextNode>
+    <TextNode>
+      <base>Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:168" transform="1,0,430,0,1,-101">Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 13" imageid="3:169">
+  <Frame name="Frame 15" imageid="3:170">
+    <TextNode>
+      <base>Удовлетворительно</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:171" transform="1,0,430,0,1,23">Удовлетворительно</string>
+    </TextNode>
+    <TextNode>
+      <base>Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:172" transform="1,0,430,0,1,59">Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 14" imageid="3:173">
+  <Frame name="Frame 15" imageid="3:174">
+    <TextNode>
+      <base>Есть проблемы</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:175" transform="1,0,430,0,1,183">Есть проблемы</string>
+    </TextNode>
+    <TextNode>
+      <base>Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</base>
+      <string page="Page 1" frame="Frame 15" nodeid="3:176" transform="1,0,430,0,1,219">Но сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом — подвергнуты целой серии независимых исследований.</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 5" imageid="3:148">
+    <TextNode>
+      <base>Дальше</base>
+      <string page="Page 1" frame="Frame 5" nodeid="3:149" transform="1,0,527.5,0,1,341">Дальше</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 5" imageid="3:181">
+  <Frame name="Frame 1" imageid="3:182">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="3:183" transform="1,0,843,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 16" imageid="3:221">
+    <TextNode>
+      <base>Обрабатываем информацию о вашем питомце</base>
+      <string page="Page 1" frame="Frame 16" nodeid="3:219" transform="1,0,843,0,1,2">Обрабатываем информацию о вашем питомце</string>
+    </TextNode>
+    <TextNode>
+      <base>Пожалуйста подождите...</base>
+      <string page="Page 1" frame="Frame 16" nodeid="3:220" transform="1,0,843,0,1,118">Пожалуйста подождите...</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 17" imageid="3:226">
+    <TextNode>
+      <base>50%</base>
+      <string page="Page 1" frame="Frame 17" nodeid="3:224" transform="1,0,983,0,1,247">50%</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 6" imageid="4:229">
+  <Frame name="Frame 1" imageid="4:230">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="4:231" transform="1,0,1273,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 16" imageid="4:243">
+    <TextNode>
+      <base>Ваш питомец добавлен</base>
+      <string page="Page 1" frame="Frame 16" nodeid="4:244" transform="1,0,1273,0,1,2">Ваш питомец добавлен</string>
+    </TextNode>
+    <TextNode>
+      <base>Вы можете перейти на основной экран состояния вашего питомца</base>
+      <string page="Page 1" frame="Frame 16" nodeid="4:245" transform="1,0,1273,0,1,54">Вы можете перейти на основной экран состояния вашего питомца</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 18" imageid="4:259">
+  <Frame name="Frame 15" imageid="4:255">
+    <TextNode>
+      <base>На главный экран</base>
+      <string page="Page 1" frame="Frame 15" nodeid="4:256" transform="1,0,1344,0,1,292">На главный экран</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 8" imageid="94:29">
+  <Frame name="Frame 1" imageid="94:30">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="94:31" transform="1,0,2133,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 25" imageid="94:66">
+    <TextNode>
+      <base>Вход </base>
+      <string page="Page 1" frame="Frame 25" nodeid="94:44" transform="1,0,2133,0,1,-396">Вход </string>
+    </TextNode>
+  <Frame name="Frame 24" imageid="94:64">
+  <Frame name="Frame 22" imageid="94:61">
+    <TextNode>
+      <base>Введите логин</base>
+      <string page="Page 1" frame="Frame 22" nodeid="94:59" transform="1,0,2153,0,1,-226">Введите логин</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 23" imageid="94:62">
+    <TextNode>
+      <base>Введите пароль</base>
+      <string page="Page 1" frame="Frame 23" nodeid="94:63" transform="1,0,2153,0,1,-154">Введите пароль</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 15" imageid="94:55">
+    <TextNode>
+      <base>Войти</base>
+      <string page="Page 1" frame="Frame 15" nodeid="94:56" transform="1,0,2284,0,1,-78">Войти</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 26" imageid="94:99">
+    <TextNode>
+      <base>Нет аккаунта?</base>
+      <string page="Page 1" frame="Frame 26" nodeid="94:98" transform="1,0,2133,0,1,-22">Нет аккаунта?</string>
+    </TextNode>
+    <TextNode>
+      <base>Зарегистрироваться</base>
+      <string page="Page 1" frame="Frame 26" nodeid="94:97" transform="1,0,2235,0,1,-22">Зарегистрироваться</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+  <Frame name="iPhone 13 &amp; 14 - 9" imageid="94:72">
+  <Frame name="Frame 1" imageid="94:73">
+    <TextNode>
+      <base>10:48</base>
+      <string page="Page 1" frame="Frame 1" nodeid="94:74" transform="1,0,2563,0,1,-468">10:48</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 25" imageid="94:85">
+    <TextNode>
+      <base>Регистрация</base>
+      <string page="Page 1" frame="Frame 25" nodeid="94:86" transform="1,0,2563,0,1,-396">Регистрация</string>
+    </TextNode>
+  <Frame name="Frame 24" imageid="94:88">
+  <Frame name="Frame 22" imageid="94:89">
+    <TextNode>
+      <base>Введите логин</base>
+      <string page="Page 1" frame="Frame 22" nodeid="94:90" transform="1,0,2583,0,1,-156">Введите логин</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 23" imageid="94:91">
+    <TextNode>
+      <base>Введите пароль</base>
+      <string page="Page 1" frame="Frame 23" nodeid="94:92" transform="1,0,2583,0,1,-84">Введите пароль</string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 24" imageid="94:95">
+    <TextNode>
+      <base>Введите e-mail</base>
+      <string page="Page 1" frame="Frame 24" nodeid="94:96" transform="1,0,2583,0,1,-12">Введите e-mail</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  <Frame name="Frame 15" imageid="94:93">
+    <TextNode>
+      <base>Cоздать аккаунт </base>
+      <string page="Page 1" frame="Frame 15" nodeid="94:94" transform="1,0,2670.5,0,1,64">Cоздать аккаунт </string>
+    </TextNode>
+  </Frame>
+  <Frame name="Frame 27" imageid="94:100">
+    <TextNode>
+      <base>Уже есть аккаунт?</base>
+      <string page="Page 1" frame="Frame 27" nodeid="94:101" transform="1,0,2563,0,1,120">Уже есть аккаунт?</string>
+    </TextNode>
+    <TextNode>
+      <base>Войти</base>
+      <string page="Page 1" frame="Frame 27" nodeid="94:102" transform="1,0,2695,0,1,120">Войти</string>
+    </TextNode>
+  </Frame>
+  </Frame>
+  </Frame>
+</Page>
+</figma>
