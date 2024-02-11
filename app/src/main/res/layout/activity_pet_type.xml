@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/cat_btn"
+        android:id="@+id/catBtn"
         android:layout_width="350dp"
         android:layout_height="62dp"
         android:layout_marginTop="32dp"
@@ -36,13 +36,13 @@
         app:srcCompat="@drawable/btncat" />
 
     <ImageButton
-        android:id="@+id/dog_btn"
+        android:id="@+id/dogBtn"
         android:layout_width="350dp"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat_btn"
+        app:layout_constraintTop_toBottomOf="@+id/catBtn"
         app:srcCompat="@drawable/btndog" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
