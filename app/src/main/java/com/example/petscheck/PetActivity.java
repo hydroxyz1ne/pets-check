@@ -9,6 +9,6 @@ public class PetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pet);
+        setContentView(R.layout.item_pet);
     }
 }

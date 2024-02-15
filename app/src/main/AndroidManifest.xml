@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetsCheck">
         <activity
+            android:name=".PetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewPetDog"
+            android:exported="false" />
+        <activity
+            android:name=".NewPet"
+            android:exported="false" />
+        <activity
             android:name=".MainScreen"
             android:exported="false" />
         <activity
@@ -37,10 +46,7 @@
             android:name=".MainActivity4"
             android:exported="true" />
         <activity
-            android:name=".MainActivity3"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity2"
+            android:name=".PetType"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

@@ -25,6 +25,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:src="@drawable/loginimage"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_head" />
@@ -42,26 +43,42 @@
         android:letterSpacing="-0.05"
         android:padding="20dp"
         android:layout_marginTop="24dp"
+        android:maxLines="1"
+        android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_image"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEt"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/roundstyle"
-        android:backgroundTint="@color/lightGrey"
-        android:hint="Введите пароль"
-        android:textColor="@color/darkGrey"
-        android:fontFamily="@font/reg"
-        android:textSize="16sp"
-        android:letterSpacing="-0.05"
-        android:padding="20dp"
-        android:layout_marginTop="16dp"
+        app:passwordToggleEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEt"/>
+        android:textColor="@color/darkGrey"
+        app:layout_constraintTop_toBottomOf="@+id/emailEt">
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="@color/lightGrey"
+            android:inputType="textPassword"
+            android:hint="Введите пароль"
+            android:textColor="@color/darkGrey"
+            android:fontFamily="@font/reg"
+            android:textSize="16sp"
+            android:letterSpacing="-0.05"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:maxLines="1"
+            android:singleLine="true"
+            app:layout_constraintTop_toBottomOf="@+id/emailEt"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/loginBtn"

@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageButton
-            android:id="@+id/addPet"
+            android:id="@+id/addPetBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:gravity="center_horizontal"

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent per = new Intent(MainActivity.this, MainActivity2.class);
+                Intent per = new Intent(MainActivity.this, MainScreen.class);
                 MainActivity.this.startActivity(per);
                 MainActivity.this.finish();
                 if(FirebaseAuth.getInstance().getCurrentUser()==null) {
