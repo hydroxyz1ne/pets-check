@@ -16,6 +16,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class PetActivity extends AppCompatActivity {
     private ImageView imageView;
 
@@ -30,7 +36,26 @@ public class PetActivity extends AppCompatActivity {
         String petName = intent.getStringExtra("PET_NAME");
         String petWeight = intent.getStringExtra("PET_WEIGHT") + " кг";
         String petBreed = "Порода:" + intent.getStringExtra("PET_BREED");
-        String petVisit = intent.getStringExtra("PET_VISIT");
+
+        TextView countdownTextView = findViewById(R.id.lastVisitInfo);
+        String petLastVisit = getIntent().getStringExtra("PET_VISIT");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        try {
+            Date visitDate = sdf.parse(petLastVisit);
+
+            Calendar currentDate = Calendar.getInstance();
+            Date today = currentDate.getTime();
+
+            long daysDifference = (visitDate.getTime() - today.getTime()) / (24 * 60 * 60 * 1000);
+
+            long daysUntilNextSixMonths = 180 - (daysDifference % 180);
+
+            countdownTextView.setText("Через " + daysUntilNextSixMonths + " дней");
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         // Затем используйте imageView
         Picasso.get()
@@ -48,6 +73,6 @@ public class PetActivity extends AppCompatActivity {
         nameInfo.setText(petName);
         weightInfo.setText(petWeight);
         breedInfo.setText(petBreed);
-        visitInfo.setText(petVisit);
+        visitInfo.setText(petLastVisit);
     }
 }

@@ -35,7 +35,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/without" />
+                    app:srcCompat="@drawable/without"
+                    android:background="@drawable/roundstylecard"/>
 
                 <TextView
                     android:id="@+id/nameInfo"

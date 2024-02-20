@@ -17,17 +17,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:layout_marginTop="30dp"
         android:id="@+id/imagePet"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:onClick="chooseImage"
+        app:layout_constraintTop_toBottomOf="@+id/login_head"
+        android:alpha="0.1"/>
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_head"
-        tools:srcCompat="@drawable/addpetimg" />
+        android:clickable="false"
+        tools:srcCompat="@drawable/add_image" />
+
 
     <EditText
         android:id="@+id/namePet"
