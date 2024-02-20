@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".NewPetDog">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/login_head"
@@ -14,12 +13,21 @@
         android:text="Информация"
         android:textSize="32sp"
         android:fontFamily="@font/semibold"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:id="@+id/imagePet"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="chooseImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_head"
+        tools:srcCompat="@drawable/addpetimg" />
 
     <EditText
         android:id="@+id/namePet"
@@ -36,7 +44,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_head"/>
+        app:layout_constraintTop_toBottomOf="@+id/imagePet"/>
 
     <EditText
         android:id="@+id/agePet"
@@ -88,6 +96,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightPet"/>
 
+    <EditText
+        android:id="@+id/lasVisit"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightGrey"
+        android:hint="Дата визита к ветеринару"
+        android:inputType="date"
+        android:focusable="false"
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/reg"
+        android:textSize="16sp"
+        android:letterSpacing="-0.05"
+        android:padding="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/breedPet"/>
+
 
     <Button
         android:id="@+id/addPetBtn"
@@ -103,7 +130,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breedPet" />
+        app:layout_constraintTop_toBottomOf="@+id/lasVisit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

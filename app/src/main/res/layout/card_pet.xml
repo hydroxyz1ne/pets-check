@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="200dp"
+    android:layout_height="260dp"
+    android:layout_marginEnd="8dp">
 
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="200dp"
+        android:layout_height="260dp"
+        android:src="@drawable/without"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Роксик"
+        android:paddingHorizontal="16dp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/white"
+        android:letterSpacing="-0.05"
+        android:textSize="20sp"
+        android:layout_marginTop="200dp"/>
+
+    <TextView
+        android:id="@+id/subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Последний раз какал: cегодня"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/reg"
+        android:paddingHorizontal="16dp"
+        android:letterSpacing="-0.05"
+        android:textSize="12sp"
+        android:layout_marginTop="230dp"/>
 </androidx.cardview.widget.CardView>

@@ -7,12 +7,16 @@
     android:backgroundTint="#F6F6F6"
     tools:context=".PetActivity">
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:scrollbarStyle="outsideOverlay">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
             <FrameLayout
                 android:id="@+id/cardNav"
                 android:layout_width="350dp"
@@ -22,6 +26,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="350dp"
@@ -30,9 +35,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/roksyan" />
+                    app:srcCompat="@drawable/without" />
 
                 <TextView
+                    android:id="@+id/nameInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120dp"
@@ -87,13 +93,8 @@
                             android:fontFamily="@font/semibold"
                             android:letterSpacing="-0.05"
                             android:text="подробнее"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/grey"
                             android:textSize="12sp" />
-
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@drawable/arrowbtn" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -137,6 +138,7 @@
                                 android:fontFamily="@font/semibold"
                                 android:letterSpacing="-0.05"
                                 android:text="4.2 кг"
+                                android:id="@+id/weightInfo"
                                 android:textColor="@color/white"
                                 android:textSize="24sp" />
 
@@ -167,6 +169,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/visitInfo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reg"
@@ -176,6 +179,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/lastVisitInfo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/semibold"
@@ -232,6 +236,7 @@
                             android:fontFamily="@font/semibold"
                             android:letterSpacing="-0.05"/>
                         <TextView
+                            android:id="@+id/breedInfo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Без породы(домашняя кошка)"
@@ -245,7 +250,7 @@
                             android:textSize="13sp"
                             android:fontFamily="@font/semibold"
                             android:letterSpacing="-0.05"
-                            android:backgroundTint="@color/orange"
+                            android:backgroundTint="@color/grey"
                             android:layout_marginTop="16dp"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -300,13 +305,10 @@
                                 android:fontFamily="@font/semibold"
                                 android:letterSpacing="-0.05"
                                 android:text="подробнее"
-                                android:textColor="@color/orange"
+                                android:textColor="@color/grey"
                                 android:textSize="12sp" />
 
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:src="@drawable/arrowbtn" />
+
                         </LinearLayout>
                     </LinearLayout>
                     <ImageView
