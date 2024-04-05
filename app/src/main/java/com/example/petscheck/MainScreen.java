@@ -3,11 +3,16 @@ package com.example.petscheck;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,12 +32,13 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
 
     LinearLayout linearPetsContainer;
     DatabaseReference databaseReference;
+    private BottomNavigationView bottomNavigationView;
+    private FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
 
         linearPetsContainer = findViewById(R.id.linearPetsContainer);
         databaseReference = FirebaseDatabase.getInstance().getReference("Pet");
@@ -39,6 +46,36 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
 
         ImageButton btn1 = findViewById(R.id.addPetBtn);
         btn1.setOnClickListener(this);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int itemId = menuItem.getItemId();
+
+                if (itemId == R.id.navigation_home) {
+                    loadFragment(new HomeFragment());
+                    return true;
+                } else if (itemId == R.id.navigation_read) {
+                    loadFragment(new ReadFragment());
+                    return true;
+                } else if (itemId == R.id.navigation_tracker) {
+                    loadFragment(new TrackerFragment());
+                    return true;
+                } else {
+                    loadFragment(new ProfileFragment());
+                    return true;
+                }
+            }
+        });
+    }
+
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment); // Replace R.id.fragment_container with your actual container id
+        fragmentTransaction.commit();
     }
 
     @Override

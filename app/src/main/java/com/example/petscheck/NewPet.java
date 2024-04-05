@@ -26,6 +26,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -68,7 +70,33 @@ public class NewPet extends AppCompatActivity {
     }
 
     public void onClickSave(View view){
-        uploadImage();
+        if (validateFields()) {
+            uploadImage();
+        } else {
+            if (TextUtils.isEmpty(namePet.getText().toString())) {
+                namePet.setError("Введите имя");
+            }
+            if (TextUtils.isEmpty(agePet.getText().toString())) {
+                agePet.setError("Введите возраст");
+            }
+            if (TextUtils.isEmpty(weightPet.getText().toString())) {
+                weightPet.setError("Введите вес");
+            }
+            if (TextUtils.isEmpty(breedPet.getText().toString())) {
+                breedPet.setError("Введите породу");
+            }
+            if (TextUtils.isEmpty(visitPet.getText().toString())) {
+                visitPet.setError("Введите дату последнего визита");
+            }
+        }
+    }
+
+    private boolean validateFields() {
+        return !TextUtils.isEmpty(namePet.getText().toString()) &&
+                !TextUtils.isEmpty(agePet.getText().toString()) &&
+                !TextUtils.isEmpty(weightPet.getText().toString()) &&
+                !TextUtils.isEmpty(breedPet.getText().toString()) &&
+                !TextUtils.isEmpty(visitPet.getText().toString());
     }
 
     private void savePet() {
@@ -132,17 +160,33 @@ public class NewPet extends AppCompatActivity {
         bitMap.compress(Bitmap.CompressFormat.JPEG,100,baos);
         byte[] byteArray = baos.toByteArray();
         final StorageReference mRef = mStorageRef.child(System.currentTimeMillis() + "myimage");
-        UploadTask up = mRef.putBytes(byteArray);
-        Task<Uri> task = up.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+
+        // Загрузка изображения в Firebase Storage
+        UploadTask uploadTask = mRef.putBytes(byteArray);
+        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                return mRef.getDownloadUrl();
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // Получение URL загруженного изображения
+                mRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        // Сохранение URI изображения и сохранение данных питомца в базу данных
+                        uploadUri = uri;
+                        savePet();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Обработка ошибок получения URL
+                        Toast.makeText(NewPet.this, "Ошибка при загрузке изображения", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
-        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onComplete(@NonNull Task<Uri> task) {
-                uploadUri = task.getResult();
-                savePet();
+            public void onFailure(@NonNull Exception e) {
+                // Обработка ошибок загрузки изображения в Firebase Storage
+                Toast.makeText(NewPet.this, "Ошибка при загрузке изображения", Toast.LENGTH_SHORT).show();
             }
         });
     }

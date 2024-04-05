@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:layout_marginTop="30dp"
         android:id="@+id/imagePet"
@@ -25,19 +26,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="chooseImage"
-        app:layout_constraintTop_toBottomOf="@+id/login_head"
-        android:alpha="0.1"/>
-
-    <ImageView
-        android:layout_marginTop="30dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_head"
-        android:clickable="false"
-        tools:srcCompat="@drawable/add_image" />
-
+        android:src="@drawable/add_image"
+        android:background="@drawable/circle_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@+id/login_head"/>
 
     <EditText
         android:id="@+id/namePet"
@@ -68,6 +60,7 @@
         android:textSize="16sp"
         android:letterSpacing="-0.05"
         android:padding="20dp"
+        android:inputType="number"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,6 +78,7 @@
         android:textSize="16sp"
         android:letterSpacing="-0.05"
         android:padding="20dp"
+        android:inputType="number"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

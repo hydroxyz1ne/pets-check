@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_nav"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.petscheck.BlankFragment"
+        android:label="@string/title_first"
+        tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.petscheck.BlankFragment2"
+        android:label="@string/title_second"
+        tools:layout="@layout/fragment_blank2" />
+    <fragment
+        android:id="@+id/navigation_third"
+        android:name="com.example.petscheck.BlankFragment3"
+        android:label="@string/title_third"
+        tools:layout="@layout/fragment_blank3" />
+    <fragment
+        android:id="@+id/blankFragment4"
+        android:name="com.example.petscheck.BlankFragment4"
+        android:label="@string/title_fourth"
+        tools:layout="@layout/fragment_blank4" />
+</navigation>

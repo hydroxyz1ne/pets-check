@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PetsCheck</string>
+    <string name="channel_name">Cat channel</string>
+    <string name="channel_description">Channel for cat notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_third">Трекер</string>
+    <string name="title_second">Статьи</string>
+    <string name="title_first">Питомцы</string>
+    <string name="title_fourth">Профиль</string>
 </resources>
