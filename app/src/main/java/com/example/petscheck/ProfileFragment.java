@@ -6,13 +6,20 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +37,9 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private DatabaseReference databaseReference;
+    private TextView textViewUserName;
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -40,6 +50,19 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         LinearLayout alertBtn = view.findViewById(R.id.alertBtn);
         LinearLayout peditBtn = view.findViewById(R.id.editpBtn);
+        LinearLayout supportBtn = view.findViewById(R.id.supBtn);
+
+        textViewUserName = view.findViewById(R.id.userName);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            String userId = auth.getCurrentUser().getUid();
+            loadUserProfile(userId); // Pass the user ID to the method
+        } else {
+            Log.d("ProfileFragment", "User is not authenticated");
+        }
+
         alertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,16 +79,22 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        supportBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), TestActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         LinearLayout logoutButton = view.findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Очистить сохраненные данные пользователя (например, токен доступа)
                 FirebaseAuth.getInstance().signOut();
 
-                // Получаем активность, чтобы перенаправить пользователя
                 Activity activity = getActivity();
                 if (activity != null) {
                     // Перенаправить пользователя на экран входа
@@ -78,6 +107,27 @@ public class ProfileFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void loadUserProfile(String userId) {
+        DatabaseReference userRef = databaseReference.child(userId);
+
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String username = dataSnapshot.child("login").getValue(String.class);
+                    textViewUserName.setText(username);
+                } else {
+                    Log.d("ProfileFragment", "No user data found in the database.");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("ProfileFragment", "Error loading user data", databaseError.toException());
+            }
+        });
     }
 
     // Метод обработки нажатия на кнопку

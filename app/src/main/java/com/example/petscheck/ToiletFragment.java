@@ -75,19 +75,10 @@ public class ToiletFragment extends Fragment {
         databaseReference = FirebaseDatabase.getInstance().getReference("Pet");
         // Загрузка данных из Firebase
         loadPetsFromFirebase();
-        spinner = view.findViewById(R.id.spinner);
         // Заполнение спиннера данными из petNames
-        setupSpinner();
         return view;
     }
 
-    private void setupSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
-                android.R.layout.simple_spinner_item, new ArrayList<>(petNames)); // Преобразуем множество в список для адаптера
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        Log.d("MyLog", "Получено " + petNames.size() + " имен питомцев из базы данных Firebase");
-    }
 
     private void loadPetsFromFirebase() {
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -123,7 +114,6 @@ public class ToiletFragment extends Fragment {
                     }
                 }
                 // Обновление спиннера после обновления данных
-                setupSpinner();
             }
 
             @Override

@@ -28,28 +28,7 @@
                     android:textColor="@color/black"
                     android:textSize="32sp"
                     android:layout_marginBottom="20dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Питомец:"
-                        android:fontFamily="@font/reg"
-                        android:textSize="16sp"
-                        android:letterSpacing="-0.05"
-                        android:layout_marginEnd="20dp"/>
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:padding="12dp"
-                        android:background="@drawable/roundstylecard"
-                        android:backgroundTint="#F6F6F6"
-                        android:layout_marginBottom="20dp"/>
-                </LinearLayout>
+
 
                 <HorizontalScrollView
                     android:id="@+id/toiletCardsScroll"

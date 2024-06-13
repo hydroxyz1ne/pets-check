@@ -44,12 +44,10 @@ import java.util.Map;
 public class TrackerFragment extends Fragment {
     private AnyChartView anyChartView;
     private Cartesian cartesian;
-    private List<DataEntry> seriesData;
+    private Map<String, List<DataEntry>> petDataEntries = new HashMap<>();
     private SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "WeightPrefs";
-    private static final String WEIGHTS_KEY = "weights";
-    private Set set;
-    private Mapping series1Mapping;
+    private static final String WEIGHTS_PREFIX = "weights_";
     private DatabaseReference petsRef;
     private List<String> petNames = new ArrayList<>();
 
@@ -73,9 +71,12 @@ public class TrackerFragment extends Fragment {
                     String name = snapshot.child("name").getValue(String.class);
                     if (name != null) {
                         petNames.add(name);
+                        if (!petDataEntries.containsKey(name)) {
+                            petDataEntries.put(name, loadWeights(name));
+                        }
                     }
                 }
-                updateGraph();
+                updateGraphs(); // Первоначальная настройка графиков
             }
 
             @Override
@@ -104,19 +105,8 @@ public class TrackerFragment extends Fragment {
         cartesian = AnyChart.line();
         cartesian.animation(true);
         cartesian.crosshair().enabled(true);
-        cartesian.crosshair().yLabel(true).yStroke((Stroke) null, null, null, (String) null, (String) null);
+        cartesian.crosshair().yLabel(true);
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-
-        seriesData = loadWeights();
-        set = Set.instantiate();
-        set.data(seriesData);
-        series1Mapping = set.mapAs("{ x: 'x', value: 'value' }");
-
-        Line series1 = cartesian.line(series1Mapping);
-        series1.name("Brandy");
-        series1.hovered().markers().enabled(true);
-        series1.hovered().markers().type(MarkerType.CIRCLE).size(4d);
-        series1.tooltip().position("right").anchor(Anchor.LEFT_CENTER).offsetX(5d).offsetY(5d);
 
         anyChartView.setChart(cartesian);
 
@@ -152,46 +142,52 @@ public class TrackerFragment extends Fragment {
     private void addWeight(double newWeight, String petName) {
         String dateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
 
-        // Добавляем данные в SharedPreferences
-        seriesData.add(new CustomDataEntry(dateTime, newWeight));
-        saveWeights(seriesData);
+        List<DataEntry> data = petDataEntries.get(petName);
+        if (data == null) {
+            data = new ArrayList<>();
+            petDataEntries.put(petName, data);
+        }
+        data.add(new CustomDataEntry(dateTime, newWeight));
+        saveWeights(petName, data);
 
-        // Обновление графика
-        updateGraph();
+        updateGraphs();
     }
 
-    private void updateGraph() {
+    private void updateGraphs() {
         cartesian.removeAllSeries();
 
-        set.data(seriesData);
-        series1Mapping = set.mapAs("{ x: 'x', value: 'value' }");
+        for (String petName : petNames) {
+            List<DataEntry> dataEntries = petDataEntries.get(petName);
+            if (dataEntries != null && !dataEntries.isEmpty()) {
+                Set set = Set.instantiate();
+                set.data(dataEntries);
+                Mapping mapping = set.mapAs("{ x: 'x', value: 'value' }");
 
-        Line series1 = cartesian.line(series1Mapping);
-        series1.name("Питомец: " + petNames.get(0));
-        series1.hovered().markers().enabled(true);
-        series1.hovered().markers().type(MarkerType.CIRCLE).size(4d);
-        series1.tooltip().position("right").anchor(Anchor.LEFT_CENTER).offsetX(5d).offsetY(5d);
+                Line series = cartesian.line(mapping);
+                series.name("Pet: " + petName);
+                series.hovered().markers().enabled(true);
+                series.hovered().markers().type(MarkerType.CIRCLE).size(4d);
+                series.tooltip().position("right").anchor(Anchor.LEFT_CENTER).offsetX(5d).offsetY(5d);
+            }
+        }
 
-        anyChartView.setChart(cartesian); // Обновление графика
+        anyChartView.setChart(cartesian);
     }
 
-    private void saveWeights(List<DataEntry> seriesData) {
+    private void saveWeights(String petName, List<DataEntry> dataEntries) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(seriesData);
-        editor.putString(WEIGHTS_KEY, json);
+        String json = gson.toJson(dataEntries);
+        editor.putString(WEIGHTS_PREFIX + petName, json);
         editor.apply();
     }
 
-    private List<DataEntry> loadWeights() {
+    private List<DataEntry> loadWeights(String petName) {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(WEIGHTS_KEY, null);
+        String json = sharedPreferences.getString(WEIGHTS_PREFIX + petName, null);
         Type type = new TypeToken<ArrayList<CustomDataEntry>>() {}.getType();
         List<CustomDataEntry> weights = gson.fromJson(json, type);
-        if (weights == null) {
-            weights = new ArrayList<>();
-        }
-        return new ArrayList<>(weights);
+        return weights != null ? new ArrayList<>(weights) : new ArrayList<>();
     }
 
     private class CustomDataEntry extends ValueDataEntry {

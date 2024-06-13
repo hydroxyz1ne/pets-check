@@ -44,8 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         HashMap<String, String> userInfo = new HashMap<>();
                                         userInfo.put("email", binding.emailEt.getText().toString());
                                         userInfo.put("login", binding.loginEt.getText().toString());
-                                        userInfo.put("profileImage", "");
-                                        userInfo.put("chats", "");
+
 
                                         FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(userInfo);

@@ -25,15 +25,4 @@
         android:textSize="20sp"
         android:layout_marginTop="200dp"/>
 
-    <TextView
-        android:id="@+id/subhead"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Последний раз какал: cегодня"
-        android:textColor="@color/grey"
-        android:fontFamily="@font/reg"
-        android:paddingHorizontal="16dp"
-        android:letterSpacing="-0.05"
-        android:textSize="12sp"
-        android:layout_marginTop="230dp"/>
 </androidx.cardview.widget.CardView>
