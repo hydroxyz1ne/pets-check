@@ -18,7 +18,9 @@ import android.app.DatePickerDialog;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,20 +96,21 @@ public class NewPet extends AppCompatActivity {
     private boolean validateFields() {
         return !TextUtils.isEmpty(namePet.getText().toString()) &&
                 !TextUtils.isEmpty(agePet.getText().toString()) &&
-                !TextUtils.isEmpty(weightPet.getText().toString()) &&
                 !TextUtils.isEmpty(breedPet.getText().toString()) &&
                 !TextUtils.isEmpty(visitPet.getText().toString());
     }
-
     private void savePet() {
+        ArrayList<Toilet> toilets = new ArrayList<>();
         String id = mDataBase.push().getKey();
         String name = namePet.getText().toString();
         String age = agePet.getText().toString();
         String weight = weightPet.getText().toString();
         String breed = breedPet.getText().toString();
         String visit = visitPet.getText().toString();
-        Pets newPet = new Pets(id, name, age, weight, breed, visit, uploadUri.toString());
-        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(age) && !TextUtils.isEmpty(weight) && !TextUtils.isEmpty(breed) && !TextUtils.isEmpty(visit)) {
+        String qrcode = "https://firebasestorage.googleapis.com/v0/b/petscheckapp.appspot.com/o/qrcodes%2Fpustoy.png?alt=media&token=3cc48665-c007-4739-8b5e-4ac4ce34a0cf";
+        toilets.add(new Toilet("10:00","2024-04-07","Name", 200));
+        Pets newPet = new Pets(id, name, age, weight, breed, visit, uploadUri.toString(), toilets,qrcode);
+        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(age)  && !TextUtils.isEmpty(breed) && !TextUtils.isEmpty(visit)) {
             if(id != null)mDataBase.child(id).setValue(newPet);
             startActivity(new Intent(NewPet.this, MainActivity7.class));
         } else {
@@ -149,7 +152,6 @@ public class NewPet extends AppCompatActivity {
             if(resultCode == RESULT_OK) {
                 Log.d("MyLog","ImageURL:" + data.getData());
                 imagePet.setImageURI(data.getData());
-
             }
         }
     }

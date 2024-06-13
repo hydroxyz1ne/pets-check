@@ -13,7 +13,7 @@
         android:id="@+id/dialog_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить поход в туалет"
+        android:text="Добавить сведения о весе"
         android:textSize="24sp"
         android:fontFamily="@font/medium"
         android:letterSpacing="-0.05"
@@ -31,7 +31,7 @@
         android:layout_marginBottom="6dp"/>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/pet_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -43,25 +43,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#797979"
-        android:text="Объем"
+        android:text="Вес"
         android:fontFamily="@font/reg"
         android:letterSpacing="-0.05"
         android:textSize="16sp"
         android:layout_marginBottom="6dp"/>
 
-    <RatingBar
-        android:id="@+id/ratingbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:isIndicator="false"
-        android:numStars="5"
-        style= "@style/CustomRatingBar"
-        android:rating="0"
-        android:stepSize="1.0" />
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Введите вес"
+        android:background="@drawable/roundstylecard"
+        android:backgroundTint="@color/grey"
+        android:inputType="numberDecimal"
+        android:padding="12dp"/>
 
 
 </LinearLayout>

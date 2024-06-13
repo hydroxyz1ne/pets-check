@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_rounded_background"
+    android:padding="32dp"
+    android:gravity="start"
+    style="@style/RoundedDialogTheme">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить поход в туалет"
+        android:textSize="24sp"
+        android:fontFamily="@font/medium"
+        android:letterSpacing="-0.05"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#797979"
+        android:text="Выберите питомца"
+        android:fontFamily="@font/reg"
+        android:letterSpacing="-0.05"
+        android:textSize="16sp"
+        android:layout_marginBottom="6dp"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/roundstylecard"
+        android:backgroundTint="@color/grey"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#797979"
+        android:text="Объем"
+        android:fontFamily="@font/reg"
+        android:letterSpacing="-0.05"
+        android:textSize="16sp"
+        android:layout_marginBottom="6dp"/>
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:isIndicator="false"
+        android:numStars="5"
+        style= "@style/CustomRatingBar"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+
+</LinearLayout>

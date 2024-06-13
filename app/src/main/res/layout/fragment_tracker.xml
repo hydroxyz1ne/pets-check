@@ -5,14 +5,31 @@
     android:layout_height="match_parent"
     tools:context=".TrackerFragment"
     android:background="@color/white"
-    android:paddingEnd="30dp">
+    android:paddingEnd="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.anychart.AnyChartView
+        android:layout_marginTop="24dp"
+        android:id="@+id/any_chart_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ПИВЕТ Я НИХУЦЯ НЕ СДЕЛАЛ ПОТОМУ ЧТО МНЕ ЛЕНЬ + ПОГХУЙ + ПОЪУЙ"
-        android:textSize="24dp"
-        android:layout_gravity="center"/>
-
+        android:layout_height="400dp"
+        />
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="600dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/semibold"
+        android:gravity="center"
+        android:onClick="onClickSave"
+        android:text="Добавить сведения о весе"
+        android:textColor="@color/white"
+        android:textSize= "16sp"
+        />
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 </FrameLayout>

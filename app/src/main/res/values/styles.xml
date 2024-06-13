@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:maxHeight">52dp</item>
+    </style>
+
+    <style name="RoundedDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_rounded_background</item>
+        <item name="colorAccent">@color/orange</item>
+        <!-- Цвет кнопки отрицательного действия -->
+        <item name="android:textColorSecondary">@color/orange</item>
+    </style>
 </resources>

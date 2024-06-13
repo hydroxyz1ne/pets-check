@@ -9,6 +9,10 @@
         android:icon="@drawable/read"
         android:title="@string/title_second"/>
     <item
+        android:id="@+id/navigation_toilet"
+        android:icon="@drawable/toilet"
+        android:title="Туалет" />
+    <item
         android:id="@+id/navigation_tracker"
         android:icon="@drawable/tracker"
         android:title="@string/title_third"/>

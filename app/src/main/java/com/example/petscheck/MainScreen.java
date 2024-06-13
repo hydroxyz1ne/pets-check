@@ -1,8 +1,18 @@
 package com.example.petscheck;
 
+import static android.app.PendingIntent.getActivity;
+
+
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +22,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,11 +45,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class MainScreen extends AppCompatActivity implements View.OnClickListener{
+    private static final int PERMISSION_REQUEST_CODE = 1;
 
     LinearLayout linearPetsContainer;
     DatabaseReference databaseReference;
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
+    private WebView myWebView;
+    private TextView textView1, textView2, textView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +63,48 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
         databaseReference = FirebaseDatabase.getInstance().getReference("Pet");
         loadPetsFromFirebase();
 
+        TextView textView1 = findViewById(R.id.newsbtn1);
+        TextView textView2 = findViewById(R.id.newsbtn2);
+        TextView textView3 = findViewById(R.id.newsbtn3);
         ImageButton btn1 = findViewById(R.id.addPetBtn);
-        btn1.setOnClickListener(this);
+        TrackerFragment fragment = new TrackerFragment();
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent n1 = new Intent(MainScreen.this, NewPet.class);
+                startActivity(n1);
+            }
+        });
+
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWebView("https://vetclinika.by/articles/5-kastraciya-kotov-i-sterilizaciya-koshek.html");
+            }
+        });
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWebView("https://vetclinika.by/zapax-izo-rta-u-koshki.-dva-primera-lichnogo-opyita.html");
+            }
+        });
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWebView("https://vetclinika.by/stoit-li-brat-zhivotnoe-iz-priyuta.html");
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
+        ImageButton openDialogButton = findViewById(R.id.btnDialog);
+
+        openDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMyDialog();
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -60,6 +117,9 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
                 } else if (itemId == R.id.navigation_read) {
                     loadFragment(new ReadFragment());
                     return true;
+                } else if (itemId == R.id.navigation_toilet) {
+                    loadFragment(new ToiletFragment());
+                    return true;
                 } else if (itemId == R.id.navigation_tracker) {
                     loadFragment(new TrackerFragment());
                     return true;
@@ -69,7 +129,41 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
                 }
             }
         });
+        // Запрос разрешений на Bluetooth
+        requestBluetoothPermissions();
     }
+
+    private void requestBluetoothPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.BLUETOOTH,
+                    Manifest.permission.BLUETOOTH_ADMIN,
+                    Manifest.permission.BLUETOOTH_SCAN,
+                    Manifest.permission.BLUETOOTH_CONNECT
+            }, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Разрешение предоставлено
+                Log.d("Permissions", "Bluetooth permissions granted");
+            } else {
+                // Разрешение отклонено
+                Log.d("Permissions", "Bluetooth permissions denied");
+            }
+        }
+    }
+
+    private void openWebView(String url) {
+        Intent intent = new Intent(MainScreen.this, WebViewActivity.class);
+        intent.putExtra("URL", url);
+        startActivity(intent);
+    }
+
 
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -82,6 +176,10 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         Intent n1 = new Intent(MainScreen.this, NewPet.class);
         startActivity(n1);
+    }
+    private void openMyDialog() {
+        MyDialogFragment dialogFragment = new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), "MyDialogFragment");
     }
 
     private void loadPetsFromFirebase() {
@@ -114,10 +212,11 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
 
                             // Передаем данные о питомце в PetActivity
                             intent.putExtra("PET_NAME", currentPet.getName());
-                            intent.putExtra("PET_WEIGHT", currentPet.getWeight());
                             intent.putExtra("PET_BREED", currentPet.getBreed());
+                            intent.putExtra("PET_WEIGHT", currentPet.getWeight());
                             intent.putExtra("PET_VISIT", currentPet.getVisit());
                             intent.putExtra("PET_IMAGE", currentPet.getImageId());
+                            intent.putExtra("PET_KEY", currentPet.getImageId());
 
                             startActivity(intent);
                         }

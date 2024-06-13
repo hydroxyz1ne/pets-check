@@ -5,11 +5,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AletsActivity extends AppCompatActivity {
+public class EditProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alerts_activity);
+        setContentView(R.layout.editprofile_activity);
 
     }
 }

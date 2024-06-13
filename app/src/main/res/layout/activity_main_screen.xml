@@ -21,6 +21,7 @@
             android:layout_marginLeft="30dp"
             android:paddingBottom="100dp">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,32 +83,26 @@
                         android:gravity="center_vertical"
                         android:padding="16dp">
                         <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/cat"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/cattoilet"
                             android:layout_marginEnd="16dp"/>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="210dp"
                                 android:layout_height="wrap_content"
-                                android:text="Походы в лоток"
                                 android:fontFamily="@font/medium"
-                                android:textSize="18dp"
                                 android:letterSpacing="-0.05"
-                                android:textColor="@color/black"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Последний раз: сегодня в 20:31"
-                                android:fontFamily="@font/reg"
-                                android:textSize="14dp"
-                                android:textColor="@color/grey"
-                                android:letterSpacing="-0.05"/>
+                                android:text="Походы в лоток"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
                         </LinearLayout>
                         <ImageButton
+                            android:id="@+id/btnDialog"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/plusbtn"
@@ -138,7 +133,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="126dp"
                                 android:layout_marginLeft="16dp"
-                                android:src="@drawable/cat" />
+                                android:src="@drawable/firstnews" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -147,29 +142,32 @@
                                 android:padding="16dp">
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/semibold"
-                                    android:text="Как правильно ухаживать за питомцем"
+                                    android:text="Кастрация котов и стерилизация кошек"
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/reg"
                                     android:lines="2"
-                                    android:text="С другой стороны новая модель организационной деятельности играет важную роль в формировании новых предложений. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации системы обучения кадров"
+                                    android:text="Единственной причиной, по которой владелец может отказаться кастрировать своего кота, является большая селекционная ценность питомца. "
                                     android:textSize="12sp" />
 
                                 <TextView
+                                    android:id="@+id/newsbtn1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
                                     android:fontFamily="@font/semibold"
                                     android:text="Читать полностью"
                                     android:textColor="@color/orange"
-                                    android:textSize="12sp" />
+                                    android:textSize="12sp"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -191,7 +189,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="126dp"
                                 android:layout_marginLeft="16dp"
-                                android:src="@drawable/cat" />
+                                android:src="@drawable/secondnews" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -200,29 +198,32 @@
                                 android:padding="16dp">
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/semibold"
-                                    android:text="Как правильно ухаживать за питомцем"
+                                    android:text="Запах изо рта у кошки. Два примера личного опыта."
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/reg"
                                     android:lines="2"
-                                    android:text="С другой стороны новая модель организационной деятельности играет важную роль в формировании новых предложений. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации системы обучения кадров"
+                                    android:text="Описываю проблему, с которой столкнулась лично. Текст написан от первого лица. Можно использовать как отдельную историю и, как обсуждение на форумах. История полностью уникальна."
                                     android:textSize="12sp" />
 
                                 <TextView
+                                    android:id="@+id/newsbtn2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
                                     android:fontFamily="@font/semibold"
                                     android:text="Читать полностью"
                                     android:textColor="@color/orange"
-                                    android:textSize="12sp" />
+                                    android:textSize="12sp"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -243,7 +244,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="126dp"
                                 android:layout_marginLeft="16dp"
-                                android:src="@drawable/cat" />
+                                android:src="@drawable/thirdnews" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -252,29 +253,32 @@
                                 android:padding="16dp">
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/semibold"
-                                    android:text="Как правильно ухаживать за питомцем"
+                                    android:text="Стоит ли брать животное из приюта?"
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:layout_width="220dp"
+                                    android:layout_width="210dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/reg"
                                     android:lines="2"
-                                    android:text="С другой стороны новая модель организационной деятельности играет важную роль в формировании новых предложений. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации системы обучения кадров"
+                                    android:text="Разве животные живущие в приютах недостойны любящей семьи? Конечно, они не такие красивые как породистые кошки и собаки, но тоже умеют любить."
                                     android:textSize="12sp" />
 
                                 <TextView
+                                    android:id="@+id/newsbtn3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
                                     android:fontFamily="@font/semibold"
                                     android:text="Читать полностью"
                                     android:textColor="@color/orange"
-                                    android:textSize="12sp" />
+                                    android:textSize="12sp"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

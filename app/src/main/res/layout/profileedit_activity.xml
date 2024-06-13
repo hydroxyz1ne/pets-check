@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/login_head"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Настройки профиля"
+        android:textSize="32sp"
+        android:fontFamily="@font/semibold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightGrey"
+        android:hint="Изменить имя "
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/reg"
+        android:textSize="16sp"
+        android:letterSpacing="-0.05"
+        android:padding="20dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_head"/>
+
+    <EditText
+        android:id="@+id/editMail"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightGrey"
+        android:hint="Изменить e-mail"
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/reg"
+        android:textSize="16sp"
+        android:letterSpacing="-0.05"
+        android:padding="20dp"
+        android:inputType="number"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName"/>
+
+    <EditText
+        android:id="@+id/editPass"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightGrey"
+        android:hint="Введите новый пароль"
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/reg"
+        android:textSize="16sp"
+        android:letterSpacing="-0.05"
+        android:padding="20dp"
+        android:inputType="number"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMail"/>
+
+    <EditText
+        android:id="@+id/confirmPass"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightGrey"
+        android:hint="Повторите пароль"
+        android:inputType="date"
+        android:focusable="false"
+        android:textColor="@color/darkGrey"
+        android:fontFamily="@font/reg"
+        android:textSize="16sp"
+        android:letterSpacing="-0.05"
+        android:padding="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPass"/>
+
+
+    <Button
+        android:id="@+id/saveProfile"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/semibold"
+        android:gravity="center"
+        android:onClick="onClickSave"
+        android:text="Сохранить"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPass" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
